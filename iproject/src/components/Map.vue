@@ -2,8 +2,8 @@
   <div>
     <div class="show-coor">
       <div>
-        <h3>Your Coordinates:</h3>
-        <p>{{ (myCoordinates.lat).toFixed(4) }} latitude, {{ (myCoordinates.lng).toFixed(4) }} longitude</p>
+        <h3 class="text-white"><b>Your Coordinates:</b></h3>
+        <h6 class="text-white"><b>{{ (myCoordinates.lat).toFixed(4) }} Latitude, {{ (myCoordinates.lng).toFixed(4) }} Longitude</b></h6>
       </div>
       <!-- <div>
         <h3>Destination Coordinates:</h3>
@@ -15,7 +15,9 @@
       :zoom="17"
       style="width: 640px; height: 360px; margin: 32px auto;"
       ref="mapRef"
-    ></GmapMap>
+    >
+    <GmapMarker ref="myMarker"
+    :position="myCoordinates"/></GmapMap>
   </div>
 </template>
 
@@ -67,5 +69,6 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 5%;
 }
 </style>
